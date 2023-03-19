@@ -1,0 +1,249 @@
+****git tutorial****
+------------------------
+
+-> git helps us to save the changes/history happening in our project happening everyday
+-> it also tracks which person sis what conti on the project.
+-> github is an platform to share git repos
+
+-> ls = list of folders
+-> ls name = list of floders inside name folder.
+-> mkdir 'name' = create a folder named 'name' in current directory
+-> cd name= current directory changed to name folder 
+
+once we initialse a folder it gets a .git file which saves all the changes/history
+-> git init = initialises the folder in git repo
+
+
+-> touch name.txt = creates a txt file 
+command to know what status have been made in the project which are not been saved 
+==> git status
+
+Untracked files are the files that are not saved...and no one cans see in repo
+-> to save or click the photo of the changes we use
+=> git add <file> or   git add .
+this gonna statge the file 
+
+once staged to click photo we use git commit so that the are permanently saved
+= git commit -m"comment line"
+
+cat name.txt => shows all the content of the txt file 
+
+as the file is edited now the file is again in the not staged 
+again we have to stage it and commit
+
+-> to remove someone from stage=>
+--> git restore --staged name.txt
+
+-> git log => helps to show all the changes made.
+press q or z to exit git log
+
+Deleted a file
+status will show that name.txt is deleated
+we can add(stage) and commit this info 
+
+to go back in the previous commit -
+-> git reset "hash id copied ffrom git log that time"
+
+-> git restore name.txt => bring back the file yahhhh
+ 
+ if dont want these changes we can stash this commits
+ after the changes we have to reset and then add them to the stage without commiting  use git stash
+ now all the changes are moved to the stash we can bring by pop and stash clear to clear the stash
+git stash => throw the changes in stash
+git stash pop => bring back the changes
+git stash clear => clears the stash
+
+
+
+github-->>>
+-----------
+create repo
+copy the url
+=>  git remote add origin https://github.com/TanmayMahato/Testing-1.git
+     this will attach the github url to the local project
+	 here git is the git command
+	 remote means we are working with urls
+	 add means we are adding a url
+	 origin is just the name
+
+=> to push the files in the github 
+   -> git push origin master
+      here master is the branch name    
+
+
+Branches
+--------
+imagine we are making commits
+this commits are linked to each as branch structures
+and by default it is known as main or master
+
+All the changes to be made should be made in a seperate branch so that the users are not effected
+git branch feature -> it will create a new branch called feature
+=>
+this will make the head pointing to the feature
+that will make all the commits added to the feature branch
+
+as there are many people working on the same project
+thus we use 
+=> git checkout main
+now our main and feature branch will be seperate
+
+to mearge our branches we use
+=>git merge feature
+    now our commits of feature branch will be part of the main branch
+
+
+
+# Working with existing projects on Github
+suppose there is repo in comclassromop as cco
+we can't directly make changes we have to fork it
+in order make changes in the project or merge our branches we need access from the owner
+if not we can copy the project in our own account and now we can do anything with it
+
+git clone " repo url" => downloads the files in the git repo in the computer
+
+
+we know that origin url is the our own account
+and by default the url from where we forked the project is known as Upstream url
+
+$ git remote add upstream https://github.com/sankardevvinu/commclassroomop.git
+=> adds the url
+
+git checkout tanmay=> this will make the head come on the tanmay branch
+
+once we copy the project and  make changes in it and want to add those changes in the main project 
+we have a pull request to do so 
+we cant => git push upstream tanmay 
+           as we don't have access
+		   
+
+one branch can only be associated in ine pull request only 
+it is reccommended to make multiple branches for different features
+
+
+before stashing we have add
+
+git push origin tanmays - f => force push the commits
+
+to sync the fork and the main project-
+--------------------------------------
+
+=>git checkout main
+=> git fetch --all --prune  or  git pull upstream main 
+=> git reset --hard upstream/main
+=> git push origin main
+
+make sure before making a new branch that the main branch i up to date
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
